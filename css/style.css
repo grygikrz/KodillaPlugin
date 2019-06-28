@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel { background: #EEE; }
+
+.container { width: 66%; height: 50%; min-height: 250px; margin-right: 10px; background: #8C8; border-radius: 5px; counter-increment: gallery-cell; }
+
+/* cell number */
+.container:before { display: block; text-align: center; content: counter(gallery-cell); line-height: 200px; font-size: 80px; color: white; }
