@@ -9,4 +9,6 @@ body { font-family: sans-serif; }
 /* cell number */
 .container:before { display: block; text-align: center; content: counter(gallery-cell); line-height: 200px; font-size: 80px; color: white; }
 
-.progress-bar {height: 10px;width: 0;background: #333;}
+.progress-bar {height: 10px;width: 0;background: #2bc200;}
+
+button.button {border: 0px;position: absolute;top: 0px;left: 0px;z-index: 9999;padding: 10px;background-color: #0160a8b0;color: white; margin:10px; border-radius: 5px}

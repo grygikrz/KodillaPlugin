@@ -30,13 +30,18 @@ body { font-family: sans-serif; }
 }
 
 .progress-bar {
-  height: 20px;
-  width: 0;
-  background: #333;
-}
-
-.progress-bar {
   height: 10px;
   width: 0;
   background: #2bc200;
+}
+
+button.button {
+    border: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    padding: 10px;
+    background-color: #0160a8b0;
+    color: white;
 }

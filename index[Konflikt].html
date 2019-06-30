@@ -12,15 +12,21 @@
 	</head>
 	<body>
 
+    <!-- Flickity HTML init -->
 
-      <div id="results"></div>
+				<div class="button-group">
+				  <button class="button">Reset</button>
+				</div>
 
-    <!-- Mustache JS/HTML init -->
 
+					<div id="results"></div>
+
+					<div class="progress-bar"></div>
+
+
+					<!-- Mustache JS/HTML init -->
 		<script id="template-code" type="x-tmpl-mustache">
-		<div class="button-group">
-		  <button class="button">Reset</button>
-		</div>
+
     <div class="carousel"
       data-flickity='{ "freeScroll": true }'>
 			<div class="container" style="background-image:url('{{code.image}}')"><h2>{{code.title}}</h2>{{{code.description}}}</div>
@@ -31,9 +37,7 @@
 
 			<div class="container" style="background-image:url('{{code3.image}}')"><h2>{{code3.title}}</h2>{{{code3.description}}}</div>
     </div>
-				<div class="progress-bar"></div>
 		</script>
-		<!-- Flickity HTML init -->
 
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <script src="https://unpkg.com/flickity-hash@1.0.3/hash.js"></script>
