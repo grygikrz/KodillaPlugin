@@ -14,7 +14,7 @@
 
 
       <div id="results"></div>
-
+    <div id="map"></div>
     <!-- Mustache JS/HTML init -->
 
 		<script id="template-code" type="x-tmpl-mustache">
@@ -23,13 +23,13 @@
 		</div>
     <div class="carousel"
       data-flickity='{ "freeScroll": true }'>
-			<div class="container" style="background-image:url('{{code.image}}')"><h2>{{code.title}}</h2>{{{code.description}}}</div>
+			<div class="container" coords='{"lat": -25.344, "lng": 131.036}' style="background-image:url('{{code.image}}')"><h2>{{code.title}}</h2>{{{code.description}}}</div>
 
-			<div class="container" style="background-image:url('{{code1.image}}')"><h2>{{code1.title}}</h2>{{{code1.description}}}</div>
+			<div class="container" coords='{"lat": 51.857057, "lng": 19.502839}' style="background-image:url('{{code1.image}}')"><h2>{{code1.title}}</h2>{{{code1.description}}}</div>
 
-			<div class="container" style="background-image:url('{{code2.image}}')"><h2>{{code2.title}}</h2>{{{code2.description}}}</div>
+			<div class="container" coords='{ "lat": 52.228652, "lng": 21.005769 }' style="background-image:url('{{code2.image}}')"><h2>{{code2.title}}</h2>{{{code2.description}}}</div>
 
-			<div class="container" style="background-image:url('{{code3.image}}')"><h2>{{code3.title}}</h2>{{{code3.description}}}</div>
+			<div class="container" coords='{ "lat": 48.865388,  "lng": 2.282857  }' style="background-image:url('{{code3.image}}')"><h2>{{code3.title}}</h2>{{{code3.description}}}</div>
     </div>
 				<div class="progress-bar"></div>
 		</script>
@@ -39,5 +39,8 @@
     <script src="https://unpkg.com/flickity-hash@1.0.3/hash.js"></script>
 		<script src="node_modules/mustache/mustache.min.js"></script>
     <script src="js/script.js"></script>
+		<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEQc2rpQimo5YAIbNYVAF0wGz_jeGEoxE&callback=initMap">
+</script>
 	</body>
 </html>
