@@ -13,10 +13,11 @@ body { font-family: sans-serif; }
   min-height:250px;
   max-height:1200px;
   margin-right: 10px;
-  background: #8C8;
   border-radius: 5px;
   counter-increment: gallery-cell;
   background-size: cover;
+  background-size: 100%;
+  background-position: center;
 }
 
 /* cell number */
@@ -29,14 +30,33 @@ body { font-family: sans-serif; }
   color: white;
 }
 
-.progress-bar {
-  height: 20px;
-  width: 0;
-  background: #333;
+.container h2 {
+    font-weight: 100;
+    font-size: 37px;
+    color: #fff;
+    margin: 0;
+    text-shadow: 1px 3px 9px #000;
 }
 
 .progress-bar {
   height: 10px;
   width: 0;
   background: #2bc200;
+}
+
+button.button {
+    border: 0px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    padding: 10px;
+    background-color: #0160a8b0;
+    color: white;
+}
+
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
 }
