@@ -46,24 +46,8 @@
     pageDots: false
   });
 
-  // reset button
-  var buttonGroup = document.querySelector('.button-group');
-  var buttons = buttonGroup.querySelectorAll('.button');
-
 	var carousel = document.querySelector('.carousel');
 	var container = carousel.querySelectorAll('.container');
-
-  buttons = fizzyUIUtils.makeArray( buttons );
-
-  buttonGroup.addEventListener( 'click', function( event ) {
-    // filter for button clicks
-    if ( !matchesSelector( event.target, '.button' ) ) {
-			return;
-    }
-    var index = buttons.indexOf( event.target );
-    flkty.select( index );
-		selectPositionOnMap()
-  });
 
   //progress bar
   var progressBar = document.querySelector('.progress-bar')
@@ -146,17 +130,10 @@
 
 
 // Select point
-function selectPositionOnMap(){
+function selectPositionOnMap(map){
 		var getCurrentSlide = document.querySelector('.container.is-selected');
 		var cordy = JSON.parse(getCurrentSlide.getAttribute("coords"));
-		var map = new google.maps.Map(
-				document.getElementById('map'), {zoom: 4, center: cordy});
-				var marker = new google.maps.Marker({position: cordy, map: map});
-		// The marker, positioned at Uluru
 		smoothPanAndZoom(map, 7, cordy);
-		marker.addListener('click', function(){
-				// Add code in future if you whant to do something after click coord button on map
-	});
 }
 
 // Get flickity buttons
@@ -166,24 +143,38 @@ function selectPositionOnMap(){
 // Google map
 	window.initMap = function() {
   // The location first slide
- selectPositionOnMap();
+	var getCurrentSlide = document.querySelector('.container.is-selected');
+	var cordy = JSON.parse(getCurrentSlide.getAttribute("coords"));
+	var map = new google.maps.Map(
+			document.getElementById('map'), {zoom: 4, center: cordy});
+
+
+			// reset button
+		  var button = document.querySelector('.button');
+
+		  button.addEventListener( 'click', function( event ) {
+
+		    flkty.select( 0 );
+				selectPositionOnMap(map);
+		  });
 
 // Get position on next button
  next.addEventListener('click', function(event){
-		 selectPositionOnMap()
+		 selectPositionOnMap(map);
 			 });
  prev.addEventListener('click', function(event){
-		 selectPositionOnMap()
+		 selectPositionOnMap(map);
  });
 // For each photo click to select point on the map
  var cont = function(ele, index, container){
-	 ele.addEventListener('click', function(event){
-		 var cordy = JSON.parse(ele.getAttribute("coords"));
-		 var map = new google.maps.Map(
-				 document.getElementById('map'), {zoom: 4, center: cordy});
-				 var marker = new google.maps.Marker({position: cordy, map: map});
+		 cordy = JSON.parse(ele.getAttribute("coords"));
+		 marker = new google.maps.Marker({position: cordy, map: map});
 		 smoothPanAndZoom(map, 7, cordy);
+		 // do something after click coord button on map
+		 marker.addListener('click', function(){
+				 flkty.select( index );
 	 });
  }
 	container.forEach(cont);
+	selectPositionOnMap(map);
 }
