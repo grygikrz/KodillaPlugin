@@ -110,7 +110,6 @@
 		}, 80);
 	};
 
-	// Poniższa funkcja działa bardzo podobnie do smoothZoom. Spróbuj samodzielnie ją przeanalizować.
 	var smoothPan = function(map, coords, callback) {
 		var mapCenter = map.getCenter();
 		coords = new google.maps.LatLng(coords);
